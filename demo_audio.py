@@ -22,6 +22,19 @@ def demo_simple_subprocess():
             .run(capture_stdout=True)
     )
 
+def demo_simple_convert_to_wav():
+    host = '172.31.23.124'
+    stream = '2'
+    out, _ = (
+        ffmpeg
+            .input('rtsp://' + host + '/' + stream)
+            # 将音频转码为 sample rate 16k, 16 bits, one channel的pcm格式
+            # 直接保存至文件
+            .output('rtsp_audio.wav', acodec='pcm_s16le', ac=1, ar='16k')
+            .overwrite_output()
+            .run(capture_stdout=True)
+    )
+
 
 def demo_extract_audio():
     host = '172.31.23.124'
