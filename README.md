@@ -4,6 +4,7 @@
 - demo_pyaudio.py 播放音频文件
 - demo_video.py 接收rtsp视频流
 - demo_audio.py 接收rtsp音频流，并进行转码等处理
+- ffmpeg_convert_flask_uploaded_file.py Falsk接收上传音频并使用ffmpeg转码保存
 
 ## Play pcm
 ```
